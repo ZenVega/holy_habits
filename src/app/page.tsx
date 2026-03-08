@@ -10,16 +10,13 @@ import Yoga from "@/components/sections/Yoga";
 export default function Home() {
   return (
     <div>
-      <Nav />
-      <main>
-        <Hero />
-        <About />
-        <Yoga />
-        <Coaching />
-        <Oils />
-        <Offer />
-        <Impressum />
-      </main>
+      <Hero />
+      <About />
+      <Yoga />
+      <Coaching />
+      <Oils />
+      <Offer />
+      <Impressum />
     </div>
   );
 }
