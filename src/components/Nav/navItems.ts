@@ -6,7 +6,7 @@ type NavItem = {
 export const navItems = [
   { id: "about", label: "About" },
   { id: "yoga", label: "Yoga" },
-  { id: "oils", label: "Oils" },
   { id: "coaching", label: "Coaching" },
+  { id: "oils", label: "Oils" },
   { id: "contact", label: "Contact" },
 ];

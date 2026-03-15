@@ -40,7 +40,7 @@ const styles = {
   visible: css({ transform: "translateY(0)" }),
   invisible: css({ transform: "translateY(-100%)" }),
   link: css({
-    color: colors.text,
+    color: colors.rosa_light,
     fontWeight: 600,
   }),
 };

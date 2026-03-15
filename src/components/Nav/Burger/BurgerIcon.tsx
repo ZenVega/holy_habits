@@ -23,7 +23,7 @@ const BurgerIcon = ({ open, toggleMenu }: props) => {
 
 const styles = {
   container: css({
-    position: "absolute",
+    position: "fixed",
     top: 16,
     right: 16,
     borderRadius: "50%",

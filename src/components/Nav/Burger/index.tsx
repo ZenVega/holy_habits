@@ -4,6 +4,7 @@ import NavList from "./NavList";
 import BurgerIcon from "./BurgerIcon";
 
 const Burger = () => {
+  //TODO: cloes burger outside of nav
   const [burgerOpen, setBurgerOpen] = useState(false);
   return (
     <div>

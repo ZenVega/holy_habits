@@ -12,6 +12,11 @@ const noto = localFont({
       style: "normal",
     },
     {
+      path: "../fonts/NotoSans-Italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
+    {
       path: "../fonts/NotoSans-SemiBold.ttf",
       weight: "600",
       style: "normal",

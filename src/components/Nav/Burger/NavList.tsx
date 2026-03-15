@@ -9,11 +9,11 @@ type props = {
   closeMenu: () => void;
 };
 
-const NavList = ({ open }: props) => {
+const NavList = ({ open, closeMenu }: props) => {
   return (
     <ul css={[styles.container, open ? styles.visible : styles.hidden]}>
       {navItems.map((item) => (
-        <li>
+        <li key={item.id} onClick={closeMenu}>
           <Link css={styles.link} key={item.id} href={"#" + item.id}>
             {item.label}
           </Link>
@@ -22,10 +22,11 @@ const NavList = ({ open }: props) => {
     </ul>
   );
 };
+
 const styles = {
   container: css({
     transition: "transform 0.3s ease",
-    position: "absolute",
+    position: "fixed",
     bottom: 0,
     width: "100%",
     background: colors.rosa,
