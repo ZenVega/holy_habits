@@ -8,7 +8,6 @@ type props = {
 };
 
 const BurgerIcon = ({ open, toggleMenu }: props) => {
-  console.log(open);
   return (
     <div
       onClick={toggleMenu}
@@ -23,6 +22,7 @@ const BurgerIcon = ({ open, toggleMenu }: props) => {
 
 const styles = {
   container: css({
+    zIndex: 1000,
     position: "fixed",
     top: 16,
     right: 16,

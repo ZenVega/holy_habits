@@ -27,6 +27,7 @@ const NavBar = () => {
 
 const styles = {
   navbar: css({
+    zIndex: 1000,
     position: "sticky",
     top: 0,
     transition: "transform 0.3s ease",

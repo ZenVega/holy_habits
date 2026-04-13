@@ -1,4 +1,6 @@
 /** @jsxImportSource @emotion/react */
+
+import Image from "next/image";
 import { SectionType } from "@/assets/content";
 import { colors } from "@/styles/colors";
 import { css } from "@emotion/react";
@@ -22,14 +24,23 @@ const Chapter = ({ content, styles: propStyles, index }: props) => {
       id={content.id}
     >
       <div css={styles.contentWrapper}>
-        <div css={[styles.title, index % 2 === 0 && styles.orderLast]}>
-          <h2>{content.title}</h2>
+        <div css={[styles.imageColumn, index % 2 && styles.orderLast]}>
+          <h2 css={styles.heading}>{content.title}</h2>
+          {content.image && (
+            <div css={styles.imageWrapper}>
+              <Image
+                src={content.image.src}
+                fill={true}
+                alt={content.image.alt || ""}
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          )}
         </div>
-
         <div css={styles.text}>
           <p>
-            {content.blocks.map((block, index) => (
-              <span key={index} dangerouslySetInnerHTML={{ __html: block }} />
+            {content.blocks.map((block, i) => (
+              <span key={i} dangerouslySetInnerHTML={{ __html: block }} />
             ))}
           </p>
         </div>
@@ -49,23 +60,37 @@ const styles = {
     display: "grid",
     gridTemplateColumns: "1fr",
     alignItems: "center",
-    padding: "2rem",
+    padding: "1rem",
     gap: "2rem",
+    textAlign: "left",
     "@media (min-width: 768px)": {
       gridTemplateColumns: "1fr 1fr",
       padding: "4rem",
+      textAlign: "center",
     },
   }),
-  title: css({
+  imageColumn: css({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "1rem",
+  }),
+  heading: css({
     fontWeight: 600,
     fontSize: 20,
-    textAlign: "center",
+    margin: 0,
+  }),
+  imageWrapper: css({
+    position: "relative",
+    width: "100%",
+    aspectRatio: "3 / 4",
+    borderRadius: 8,
+    overflow: "hidden",
   }),
   text: css({
     maxWidth: "600px",
     margin: "0 auto",
     lineHeight: 1.7,
-    textAlign: "center",
   }),
   orderLast: css({
     "@media (min-width: 768px)": {

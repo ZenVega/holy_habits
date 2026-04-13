@@ -25,6 +25,7 @@ const NavList = ({ open, closeMenu }: props) => {
 
 const styles = {
   container: css({
+    zIndex: 1000,
     transition: "transform 0.3s ease",
     position: "fixed",
     bottom: 0,
