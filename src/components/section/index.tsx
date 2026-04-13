@@ -49,7 +49,7 @@ const Chapter = ({ content, styles: propStyles, index }: props) => {
   );
 };
 
-const styles = {
+export const styles = {
   section: css({
     display: "flex",
     alignItems: "center",
@@ -71,14 +71,21 @@ const styles = {
   }),
   imageColumn: css({
     display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
     gap: "1rem",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    "@media (min-width: 768px)": {
+      alignItems: "center",
+    },
   }),
   heading: css({
     fontWeight: 600,
     fontSize: 20,
     margin: 0,
+    textAlign: "left",
+    "@media (min-width: 768px)": {
+      textAlign: "center",
+    },
   }),
   imageWrapper: css({
     position: "relative",

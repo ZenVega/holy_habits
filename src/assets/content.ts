@@ -11,6 +11,7 @@ export type ImageType = {
 };
 
 export const sectionIds = ["about", "yoga", "coaching", "oils"];
+
 export const content: Record<string, SectionType> = {
   about: {
     title: "I like to move it",
@@ -58,7 +59,7 @@ export const content: Record<string, SectionType> = {
     title: "Contact & Impressum",
     id: "contact",
     blocks: [
-      "Du hast Fragen? Oder möchtest gerne mit mir arbeiten? Ich freue mich über Deine Nachricht:<br/><br/>nuria@holyhabits.club | 0177.7304074<br/>www.holyhabits.club",
+      "Du hast Fragen? Oder möchtest gerne mit mir arbeiten? Ich freue mich über Deine Nachricht:",
     ],
   },
 };
