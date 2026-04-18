@@ -10,9 +10,9 @@ export type ImageType = {
   alt?: string;
 };
 
-export const sectionIds = ["about", "yoga", "coaching", "oils"];
+export type SectionId = "about" | "yoga" | "coaching" | "oils" | "contact";
 
-export const content: Record<string, SectionType> = {
+export const content: Record<SectionId, SectionType> = {
   about: {
     title: "I like to move it",
     id: "about",
@@ -59,7 +59,7 @@ export const content: Record<string, SectionType> = {
     title: "Contact & Impressum",
     id: "contact",
     blocks: [
-      "Du hast Fragen? Oder möchtest gerne mit mir arbeiten? Ich freue mich über Deine Nachricht:",
+      "Du hast Fragen? Oder möchtest gerne mit mir arbeiten? <br/> Ich freue mich über Deine Nachricht:",
     ],
   },
 };

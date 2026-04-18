@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import Image from "next/image";
-import { SectionType } from "@/assets/content";
+import { SectionId, SectionType } from "@/assets/content";
 import { colors } from "@/styles/colors";
 import { css } from "@emotion/react";
 import { SerializedStyles } from "@emotion/react";
@@ -10,9 +10,9 @@ type props = {
   content: SectionType;
   styles?: SerializedStyles;
   index: number;
+  key: SectionId;
 };
-//TODO: add contact section
-//TODO: add smooth scroll
+
 const Chapter = ({ content, styles: propStyles, index }: props) => {
   return (
     <section
