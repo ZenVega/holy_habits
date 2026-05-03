@@ -30,9 +30,35 @@ const noto = localFont({
   variable: "--font-noto",
 });
 
+const description =
+  "Holy Habits von Nuria — Yoga, Coaching und ätherische Öle für einen ganzheitlichen Weg zu mehr Wohlbefinden. Bewegung, Selbstbestimmtheit und Klarheit für Deinen Alltag.";
+
 export const metadata: Metadata = {
-  title: "Holy Habits",
-  description: "Yoga.Coaching.Oils",
+  title: "Holy Habits — Yoga. Coaching. Oils.",
+  description,
+  metadataBase: new URL("https://www.holyhabits.club"),
+  openGraph: {
+    title: "Holy Habits — Yoga. Coaching. Oils.",
+    description,
+    url: "https://www.holyhabits.club",
+    siteName: "Holy Habits",
+    images: [
+      {
+        url: "/images/NURIA_VISTENKARTEUND LOGO_20240430.jpeg",
+        width: 640,
+        height: 414,
+        alt: "Holy Habits Logo",
+      },
+    ],
+    locale: "de_DE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Holy Habits — Yoga. Coaching. Oils.",
+    description,
+    images: ["/images/NURIA_VISTENKARTEUND LOGO_20240430.jpeg"],
+  },
 };
 
 export default function RootLayout({
@@ -41,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="de">
       <body className={`${noto.variable} antialiased`}>
         <main>
           <Nav />
