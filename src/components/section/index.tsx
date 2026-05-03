@@ -44,11 +44,9 @@ const Chapter = ({ content, styles: propStyles, index }: props) => {
           </div>
         )}
         <div css={styles.text}>
-          <p>
-            {content.blocks.map((block, i) => (
-              <span key={i} dangerouslySetInnerHTML={{ __html: block }} />
-            ))}
-          </p>
+          {content.blocks.map((block, i) => (
+            <p key={i} dangerouslySetInnerHTML={{ __html: block }} />
+          ))}
         </div>
       </div>
     </section>
@@ -60,23 +58,30 @@ export const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    padding: "3rem 0",
+    "@media (min-width: 768px)": {
+      padding: "4rem 0",
+    },
   }),
   contentWrapper: css({
     maxWidth: 1024,
     display: "grid",
     gridTemplateColumns: "1fr",
     alignItems: "start",
-    padding: "1rem",
+    padding: "0 1.5rem",
     gap: "2rem",
     textAlign: "left",
     "@media (min-width: 768px)": {
       gridTemplateColumns: "1fr 1fr",
-      padding: "4rem",
+      padding: "0 4rem",
+      gap: "3rem",
     },
   }),
   contentWrapperNoImage: css({
     "@media (min-width: 768px)": {
       gridTemplateColumns: "1fr",
+      maxWidth: 680,
+      margin: "0 auto",
     },
   }),
   imageColumn: css({
@@ -89,26 +94,31 @@ export const styles = {
     },
   }),
   heading: css({
-    fontWeight: 600,
-    fontSize: 20,
+    fontWeight: 700,
+    fontSize: 24,
     margin: 0,
     textAlign: "left",
     gridColumn: "1 / -1",
+    letterSpacing: "0.02em",
     "@media (min-width: 768px)": {
       textAlign: "center",
+      fontSize: 28,
     },
   }),
   imageWrapper: css({
     position: "relative",
     width: "100%",
     aspectRatio: "3 / 4",
-    borderRadius: 8,
+    borderRadius: 12,
     overflow: "hidden",
+    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
   }),
   text: css({
     maxWidth: "600px",
     margin: "0 auto",
-    lineHeight: 1.7,
+    lineHeight: 1.8,
+    fontSize: 16,
+    color: "#2a2a28",
   }),
   orderLast: css({
     "@media (min-width: 768px)": {

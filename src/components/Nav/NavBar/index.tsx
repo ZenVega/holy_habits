@@ -8,7 +8,6 @@ import { useScrollDirection } from "@/hooks/useScrollDirection";
 
 const NavBar = () => {
   const scrollDirection = useScrollDirection();
-  console.log(scrollDirection);
   return (
     <div
       css={[
@@ -32,7 +31,7 @@ const styles = {
     top: 0,
     transition: "transform 0.3s ease",
     background: colors.blue,
-    height: 48,
+    height: 52,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -43,6 +42,13 @@ const styles = {
   link: css({
     color: colors.rosa_light,
     fontWeight: 600,
+    letterSpacing: "0.04em",
+    textTransform: "uppercase" as const,
+    fontSize: 13,
+    transition: "opacity 0.2s ease",
+    "&:hover": {
+      opacity: 0.75,
+    },
   }),
 };
 export default NavBar;

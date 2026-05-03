@@ -24,44 +24,69 @@ type props = {
 };
 const ImpressumModal = ({ closeModal }: props) => {
   return (
-    <section css={styles.modal}>
-      <button css={styles.button} onClick={closeModal}>
-        X
-      </button>
-      <h2 css={{ fontWeight: 600 }}>Impressum</h2>
-      <br />
-      <p>{data.fullName}</p>
-      <p>{data.address[0]}</p>
-      <p>{data.address[1]}</p>
-      <br />
-      <p>
-        email:
-        <ObfuscatedMail />
-      </p>
-      <p css={styles.obfuscate}>
-        tel:
-        <ObfuscatedTel />
-      </p>
-    </section>
+    <div css={styles.backdrop} onClick={closeModal}>
+      <section css={styles.modal} onClick={(e) => e.stopPropagation()}>
+        <button css={styles.button} onClick={closeModal} aria-label="Close">
+          &times;
+        </button>
+        <h2 css={{ fontWeight: 700, fontSize: 22 }}>Impressum</h2>
+        <br />
+        <p>{data.fullName}</p>
+        <p>{data.address[0]}</p>
+        <p>{data.address[1]}</p>
+        <br />
+        <p>
+          email:
+          <ObfuscatedMail />
+        </p>
+        <p css={styles.obfuscate}>
+          tel:
+          <ObfuscatedTel />
+        </p>
+      </section>
+    </div>
   );
 };
 
 const styles = {
-  modal: css({
+  backdrop: css({
     position: "fixed",
     top: 0,
     left: 0,
     zIndex: 2000,
     width: "100vw",
     height: "100vh",
-    background: colors.rosa_light,
-    padding: "1rem",
+    background: "rgba(0, 0, 0, 0.3)",
     display: "flex",
-    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "1rem",
+  }),
+  modal: css({
+    background: colors.rosa_light,
+    borderRadius: 16,
+    padding: "2rem",
+    maxWidth: 420,
+    width: "100%",
+    position: "relative",
+    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.12)",
   }),
   button: css({
-    alignSelf: "flex-end",
-    fontWeight: 600,
+    position: "absolute",
+    top: 12,
+    right: 16,
+    background: "none",
+    border: "none",
+    fontSize: 24,
+    cursor: "pointer",
+    color: colors.text,
+    lineHeight: 1,
+    padding: 4,
+    opacity: 0.6,
+    transition: "opacity 0.2s ease",
+    "&:hover": {
+      opacity: 1,
+    },
   }),
   obfuscate: css({
     unicodeBidi: "bidi-override",

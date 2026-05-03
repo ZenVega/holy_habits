@@ -35,8 +35,11 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "32px 0",
-    gap: 16,
+    padding: "40px 0",
+    gap: 20,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    boxShadow: "0 -4px 24px rgba(0, 0, 0, 0.1)",
   }),
   visible: css({
     transform: "translateY(0)",
@@ -46,6 +49,9 @@ const styles = {
   }),
   link: css({
     color: colors.text,
+    fontSize: 18,
+    letterSpacing: "0.02em",
+    padding: "4px 0",
   }),
 };
 export default NavList;

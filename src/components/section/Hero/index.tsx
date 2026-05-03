@@ -2,14 +2,13 @@
 import { css } from "@emotion/react";
 import { colors } from "@/styles/colors";
 import Logo from "@/assets/logo.svg";
-import useWindowDimensions from "@/hooks/useWindowDimensions";
 
 const Hero: React.FC = () => {
-  const { width } = useWindowDimensions();
-
   return (
     <section css={styles.section}>
-      <Logo width={width < 500 ? 350 : 450} />
+      <div css={styles.logoWrapper}>
+        <Logo css={styles.logo} />
+      </div>
     </section>
   );
 };
@@ -21,6 +20,18 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    padding: "2rem",
+  }),
+  logoWrapper: css({
+    width: "100%",
+    maxWidth: 350,
+    "@media (min-width: 500px)": {
+      maxWidth: 450,
+    },
+  }),
+  logo: css({
+    width: "100%",
+    height: "auto",
   }),
 };
 export default Hero;
