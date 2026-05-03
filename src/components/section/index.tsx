@@ -14,6 +14,7 @@ type props = {
 };
 
 const Chapter = ({ content, styles: propStyles, index }: props) => {
+  const hasImage = !!content.image;
   return (
     <section
       css={[
@@ -23,20 +24,25 @@ const Chapter = ({ content, styles: propStyles, index }: props) => {
       ]}
       id={content.id}
     >
-      <div css={styles.contentWrapper}>
-        <div css={[styles.imageColumn, index % 2 && styles.orderLast]}>
-          <h2 css={styles.heading}>{content.title}</h2>
-          {content.image && (
+      <div
+        css={[
+          styles.contentWrapper,
+          !hasImage && styles.contentWrapperNoImage,
+        ]}
+      >
+        <h2 css={styles.heading}>{content.title}</h2>
+        {hasImage && (
+          <div css={[styles.imageColumn, index % 2 && styles.orderLast]}>
             <div css={styles.imageWrapper}>
               <Image
-                src={content.image.src}
+                src={content.image!.src}
                 fill={true}
-                alt={content.image.alt || ""}
+                alt={content.image!.alt || ""}
                 style={{ objectFit: "cover" }}
               />
             </div>
-          )}
-        </div>
+          </div>
+        )}
         <div css={styles.text}>
           <p>
             {content.blocks.map((block, i) => (
@@ -59,14 +65,18 @@ export const styles = {
     maxWidth: 1024,
     display: "grid",
     gridTemplateColumns: "1fr",
-    alignItems: "center",
+    alignItems: "start",
     padding: "1rem",
     gap: "2rem",
     textAlign: "left",
     "@media (min-width: 768px)": {
       gridTemplateColumns: "1fr 1fr",
       padding: "4rem",
-      textAlign: "center",
+    },
+  }),
+  contentWrapperNoImage: css({
+    "@media (min-width: 768px)": {
+      gridTemplateColumns: "1fr",
     },
   }),
   imageColumn: css({
@@ -83,6 +93,7 @@ export const styles = {
     fontSize: 20,
     margin: 0,
     textAlign: "left",
+    gridColumn: "1 / -1",
     "@media (min-width: 768px)": {
       textAlign: "center",
     },
