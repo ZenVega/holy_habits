@@ -1,13 +1,25 @@
 /** @jsxImportSource @emotion/react */
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import NavList from "./NavList";
 import BurgerIcon from "./BurgerIcon";
 
 const Burger = () => {
-  //TODO: cloes burger outside of nav
   const [burgerOpen, setBurgerOpen] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!burgerOpen) return;
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setBurgerOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [burgerOpen]);
+
   return (
-    <div>
+    <div ref={navRef}>
       <BurgerIcon
         open={burgerOpen}
         toggleMenu={() => setBurgerOpen(!burgerOpen)}
