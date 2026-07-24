@@ -25,10 +25,7 @@ const Chapter = ({ content, styles: propStyles, index }: props) => {
       id={content.id}
     >
       <div
-        css={[
-          styles.contentWrapper,
-          !hasImage && styles.contentWrapperNoImage,
-        ]}
+        css={[styles.contentWrapper, !hasImage && styles.contentWrapperNoImage]}
       >
         <h2 css={styles.heading}>{content.title}</h2>
         {hasImage && (
@@ -43,9 +40,13 @@ const Chapter = ({ content, styles: propStyles, index }: props) => {
             </div>
           </div>
         )}
-        <div css={styles.text}>
+        <div css={styles.textWrapper}>
           {content.blocks.map((block, i) => (
-            <p key={i} dangerouslySetInnerHTML={{ __html: block }} />
+            <p
+              css={styles.text}
+              key={i}
+              dangerouslySetInnerHTML={{ __html: block }}
+            />
           ))}
         </div>
       </div>
@@ -113,12 +114,15 @@ export const styles = {
     overflow: "hidden",
     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
   }),
-  text: css({
+  textWrapper: css({
     maxWidth: "600px",
     margin: "0 auto",
     lineHeight: 1.8,
     fontSize: 16,
     color: "#2a2a28",
+  }),
+  text: css({
+    paddingBottom: 16,
   }),
   orderLast: css({
     "@media (min-width: 768px)": {

@@ -10,7 +10,13 @@ export type ImageType = {
   alt?: string;
 };
 
-export type SectionId = "about" | "yoga" | "coaching" | "oils" | "contact";
+export type SectionId =
+  | "about"
+  | "yoga"
+  | "coaching"
+  | "oils"
+  | "offers"
+  | "contact";
 
 export const content: Record<SectionId, SectionType> = {
   about: {
@@ -21,9 +27,9 @@ export const content: Record<SectionId, SectionType> = {
       alt: "portrait of woman",
     },
     blocks: [
-      "Ich bin Nuria und was irgendwann mit einer Yoga- stunde begonnen hat, ist zu einer Leidenschaft und  heute zu meinem Beruf geworden. Neben meinen  Yoga- und Movement- Angeboten, sowie meiner Expertise in der Anwendung von ätherischen Ölen, vereine ich in meinen Coaching die körperliche mit der mentalen Ebene und suche mit Dir zusammen einen ganzheitlichen Weg zu mehr Wohlbefinden.",
+      "Ich bin Nuria und was irgendwann mit einer Yogastunde begonnen hat, ist zu einer Leidenschaft und heute zu meinem Beruf geworden. Neben meinen Yoga- und Movementangeboten, sowie meiner Expertise in der Anwendung von ätherischen Ölen, vereine ich in meinen Coaching die körperliche mit der mentalen Ebene und suche mit Dir zusammen einen ganzheitlichen Weg zu mehr Wohlbefinden.",
 
-      "Die meisten Menschen buchen eine erste Yogastunde, weil sie ein körperliches Anliegen haben. Rückenschmerzen, Stress, innere Unruhe...<br/>Auch der Wunsch ätherische Öle zu benutzen oder ein Coaching zu buchen, entspringt meist einer Situation, die sich nicht gut anfühlt oder verändert werden möchte.<br>Sobald sich diese Tools in den Alltag integrieren, wir spüren, wie gut Bewegung, Selbstbestimmtheit und Klarheit tut, werden aus Notwendigkeiten- gute Angelegenheiten. holy habits.",
+      "Die meisten Menschen buchen eine erste Yogastunde, weil sie ein körperliches Anliegen haben. Rückenschmerzen, Stress, innere Unruhe...<br/>Auch der Wunsch ätherische Öle zu benutzen oder ein Coaching zu buchen, entspringt meist einer Situation, die sich nicht gut anfühlt oder verändert werden möchte.<br/>Sobald sich diese Tools in den Alltag integrieren, wir spüren, wie gut Bewegung, Selbstbestimmtheit und Klarheit tut, werden aus Notwendigkeiten- gute Angelegenheiten. holy habits.",
     ],
   },
   yoga: {
@@ -54,6 +60,15 @@ export const content: Record<SectionId, SectionType> = {
     blocks: [
       "Ätherische Öle sind ein wunderbares Werkzeug, um tiefer zu gehen. Sie können Momente unterstreichen oder klarer werden lassen, egal ob in der Yogapraxis oder im Alltag. Öle können sanfte Wegweiser sein und gleichzeitig eine kraftvolle Unterstützung, wenn man die AusRichtung ein wenig verloren hat. Für mich war es eine schöne Erkenntnis, dass ich mit Ölen meinen  Alltag mitunter positiver und leichter gestalten, meinen Körper besser wahrnehmen kann, wodurch ich  meine Gesundheit & mein Wohlbefinden unterstütze. Die Entdeckung von ätherischen Ölen ist für mich so wertvoll, deshalb liebe ich es, dieses Wissen zu teilen und diesen duftigen Raum auch für andere zu öffnen.",
     ],
+  },
+  offers: {
+    title: "Offers",
+    id: "offers",
+    image: {
+      src: "/images/fotos/oils.jpeg",
+      alt: "woman presenting a small bottle",
+    },
+    blocks: [],
   },
   contact: {
     title: "Contact & Impressum",

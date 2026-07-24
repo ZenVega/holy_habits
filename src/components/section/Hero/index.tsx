@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { colors } from "@/styles/colors";
 import Logo from "@/assets/logo.svg";
 
 const Hero: React.FC = () => {
@@ -16,7 +15,7 @@ const Hero: React.FC = () => {
 const styles = {
   section: css({
     height: "100vh",
-    backgroundColor: colors.blue_light,
+    backgroundColor: "white",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

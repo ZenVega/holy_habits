@@ -8,5 +8,6 @@ export const navItems = [
   { id: "yoga", label: "Yoga" },
   { id: "coaching", label: "Coaching" },
   { id: "oils", label: "Oils" },
+  { id: "offers", label: "Offers" },
   { id: "contact", label: "Contact" },
 ];
