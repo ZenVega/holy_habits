@@ -34,9 +34,40 @@ const description =
   "Holy Habits von Nuria — Yoga, Coaching und ätherische Öle für einen ganzheitlichen Weg zu mehr Wohlbefinden. Bewegung, Selbstbestimmtheit und Klarheit für Deinen Alltag.";
 
 export const metadata: Metadata = {
-  title: "Holy Habits — Yoga. Coaching. Oils.",
+  title: {
+    default: "Holy Habits — Yoga. Coaching. Oils.",
+    template: "%s — Holy Habits",
+  },
   description,
   metadataBase: new URL("https://www.holyhabits.club"),
+  keywords: [
+    "Yoga",
+    "Coaching",
+    "ätherische Öle",
+    "Movement",
+    "Achtsamkeit",
+    "Nuria",
+    "Holy Habits",
+    "Yoga Diez",
+    "Yoga Elz",
+    "Wohlbefinden",
+  ],
+  authors: [{ name: "Nuria" }],
+  creator: "Nuria",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title: "Holy Habits — Yoga. Coaching. Oils.",
     description,
@@ -61,6 +92,26 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  name: "Holy Habits",
+  description,
+  url: "https://www.holyhabits.club",
+  image: "https://www.holyhabits.club/images/NURIA_VISTENKARTEUND LOGO_20240430.jpeg",
+  founder: { "@type": "Person", name: "Nuria" },
+  areaServed: [
+    { "@type": "Place", name: "Diez" },
+    { "@type": "Place", name: "Elz" },
+  ],
+  knowsAbout: ["Yoga", "Movement", "Coaching", "Ätherische Öle", "Achtsamkeit"],
+  makesOffer: [
+    { "@type": "Offer", name: "Yoga" },
+    { "@type": "Offer", name: "Coaching" },
+    { "@type": "Offer", name: "Ätherische Öle" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -69,6 +120,10 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body className={`${noto.variable} antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <main>
           <Nav />
           {children}

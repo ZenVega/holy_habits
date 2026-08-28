@@ -11,7 +11,7 @@ const contactData = content.contact;
 const Contact: React.FC = () => {
   const [showImpressum, setShowImpressum] = useState(false);
   return (
-    <section css={styles.section}>
+    <section css={styles.section} id={contactData.id}>
       <div css={contactStyles.contentWrapper}>
         <h2 css={[styles.heading, { textAlign: "center" }]}>Kontakt</h2>
         <div css={[styles.text, { textAlign: "center", margin: "0 auto" }]}>
