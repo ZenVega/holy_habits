@@ -69,7 +69,7 @@ export const content: Record<SectionId, SectionType> = {
       alt: "woman presenting a small bottle",
     },
     blocks: [
-      "To connect with our bodies is to learn<br/>to trust ourselves,<br/>and from that comes power.<br/><br/>Mirka Knast",
+      "To connect with our bodies is to learn<br/>to trust ourselves,<br/>and from that comes power.<br/>-Mirka Knast-",
       "Ich unterrichte regelmäßig in verschiedenen Sportstudios in Diez und Elz. Wenn Du eine Probestunde besuchen möchtest, schreib mir gern.<br/>Darüber hinaus biete ich Einzelstunden an, die bei Dir zu Hause oder in einem der Studios stattfinden können.<br/>Wenn Du Yoga in der Tiefe kennenlernen möchtest, intensiv arbeiten oder ein bestimmtes Anliegen hast, sind Einzelstunden eine großartige Möglichkeit der Zusammenarbeit.<br/>60 min/ 95 EUR, 10er Karte 900 EUR<br/><br/>Holy Habits ist zertifiziert über die Prüfstelle für Prävention, sodass in diesem Rahmen auch Präventionskurse abgerechnet werden können.",
     ],
   },
