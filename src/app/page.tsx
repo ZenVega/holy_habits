@@ -10,14 +10,13 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <Chapter key={"about"} content={content["about"]} index={0} />
       <SubscribeForm />
+      <Chapter key={"about"} content={content["about"]} index={0} />
       <Chapter key={"yoga"} content={content["yoga"]} index={1} />
       <Chapter key={"coaching"} content={content["coaching"]} index={2} />
       <Chapter key={"oils"} content={content["oils"]} index={3} />
       <Chapter key={"offers"} content={content["offers"]} index={4} />
       <Specials index={5} />
-
       <Contact />
     </div>
   );

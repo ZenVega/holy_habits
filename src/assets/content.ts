@@ -11,12 +11,7 @@ export type ImageType = {
 };
 
 export type SectionId =
-  | "about"
-  | "yoga"
-  | "coaching"
-  | "oils"
-  | "offers"
-  | "contact";
+  "about" | "yoga" | "coaching" | "oils" | "offers" | "contact";
 
 export const content: Record<SectionId, SectionType> = {
   about: {
@@ -65,8 +60,8 @@ export const content: Record<SectionId, SectionType> = {
     title: "Offers",
     id: "offers",
     image: {
-      src: "/images/fotos/oils.jpeg",
-      alt: "woman presenting a small bottle",
+      src: "/images/fotos/nuria_front.jpg",
+      alt: "woman smiling from the front",
     },
     blocks: [
       "To connect with our bodies is to learn<br/>to trust ourselves,<br/>and from that comes power.<br/>-Mirka Knast-",
