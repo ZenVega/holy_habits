@@ -11,6 +11,9 @@ const images = [
   { src: "/images/fotos/specials_1.PNG", alt: "special offer" },
   { src: "/images/fotos/specials_2.PNG", alt: "special offer" },
   { src: "/images/fotos/specials_3.PNG", alt: "special offer" },
+  { src: "/images/fotos/specials_4.jpg", alt: "special offer" },
+  { src: "/images/fotos/specials_5.jpg", alt: "special offer" },
+  { src: "/images/fotos/specials_6.jpg", alt: "special offer" },
 ];
 
 const Specials = ({ index }: { index: number }) => {
